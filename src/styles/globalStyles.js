@@ -81,7 +81,6 @@ export const TextDescription = styled.p`
 export const StyledClickable = styled.div`
   :active {
     opacity: 0.6;
-    
   }
 `;
 
@@ -101,6 +100,10 @@ column-gap:${({ gap }) => (gap ? gap+"%" : "20%")};
 @media screen and (max-width: 768px) {
   grid-template-columns: ${({ col }) => (col ? col+"%" + col+"%" : "100%")};s
 }
+`;
+
+export const Mint = styled.div`
+  border
 `;
 
 export const Image = styled.img`

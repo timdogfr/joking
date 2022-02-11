@@ -123,6 +123,24 @@ function Home() {
         
         <Navbar/>
         <HeroSection/>
+
+        <s.Container
+           flex={1}
+            jc={"center"}
+            ai={"center"}
+            style={{
+              position: "relative",
+              zIndex: "1",
+              marginTop: "-80vh",
+            }}
+        >
+        
+        <s.Mint>
+          
+        </s.Mint>
+
+        </s.Container>
+        
         <s.Container
             flex={1}
             jc={"center"}
@@ -130,7 +148,7 @@ function Home() {
             style={{
               position: "relative",
               zIndex: "1",
-              marginTop: "-50vh",
+              marginTop: "-10vh",
             }}
           >
           
