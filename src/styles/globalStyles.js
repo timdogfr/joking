@@ -71,7 +71,7 @@ export const TextDescription = styled.p`
   color: var(--primary-text);
   font-size: 16px;
   line-height: 1.6;
-  font-family: 'cocogoose';
+  font-family: 'wonder';
 
   @media screen and (min-width: 768px) {
     margin-top: 0 ;

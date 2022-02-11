@@ -11,16 +11,11 @@ function HeroSection() {
         <>
            <HeroContainer id="home">
                 <HeroBg>
-                    <ImageBg src={"config/images/bg.jpg"} />
+                    <ImageBg src={"config/images/bg.png"} />
                 </HeroBg>
                 <HeroContent>
                     <HeroH1>Official Mutant Age Camel Club Mint Page</HeroH1>
                     <HeroP>Mint your Official Mutant Age Camel Club NFT Below  </HeroP>
-                    {/* <HeroBtnWrapper>
-                        <Button to="about" spy={true} smooth={true} offset={-80} duration={500} onMouseEnter={onHover} onMouseLeave={onHover}>
-                            Mint
-                        </Button>
-                    </HeroBtnWrapper> */}
                 </HeroContent>
            </HeroContainer> 
         </>

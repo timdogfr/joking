@@ -38,7 +38,7 @@ export const NavContainer= styled.div`
 
 
 export const NavLogo = styled.img`
-  width: 150px;
+  width: 80px;
   cusror: pointer;
   display: flex;
   align-items: center;
@@ -49,7 +49,7 @@ export const NavLogo = styled.img`
   transition: height 0.5s;
   padding-bottom:2vh;
   @media (min-width: 767px) {
-    width: 240px;
+    width: 80px;
     margin-top  : 30px;
   }`;
 
@@ -99,7 +99,7 @@ export const NavMenu = styled.ul`
 
   export const NavItems = styled.li`
     height:80px;
-    border-bottom:2px solid transparent;
+    padding-left:24px;
     list-style: none;
     $:hover{
       border-bottom:2px solid #5FCDE4;
@@ -107,7 +107,7 @@ export const NavMenu = styled.ul`
 
     @media screen and (max-width: 960px) {
       height:0%;
-      margin-top:15vh;
+      margin-top:9vh;
       $:hover{
         border:none;
       }
@@ -122,8 +122,10 @@ export const NavMenu = styled.ul`
     padding:0 1rem;
     display:flex;
     cursor:pointer;
+    font-family: 'wonder';
+    font-size:1.5rem;
     &:hover{
-      color:var(--primary);
+      color:#dbac36;
     }
     &:active{
       border-bottom: 3px solid #01bf71;
@@ -144,19 +146,21 @@ export const NavMenu = styled.ul`
 
 
   export const StyledButton = styled.button`
-   background-color: var(--primary);
-    padding: 10px 22px;
+    padding: 8px 22px;
     border-radius: 10px;
     white-space: nowrap;
     height:40px;
     outline: none;
-    ${'' /* margin-left: 10rem; */}
     border: none;
-    font-weight: bolder;
     color: var(--primary-text);
     margin-top:1.1vw;
     cursor: pointer;
+    font-family: 'wonder';
     transition: 0.5s all ease-in-out;
+    font-size:1.2rem;
+    background:transparent;
+    color: #dbac36;
+    border: 1px solid #dbac36;
     :active {
       box-shadow: none;
       -webkit-box-shadow: none;
@@ -195,6 +199,21 @@ export const NavMenu = styled.ul`
       justify-content:center;
     }
 
+  `;
+
+  export const NavIcon = styled.img`
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    vertical-align:middle;
+    margin:10px auto;
+
+    @media screen and (max-width: 960px) {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+    }
   `;
 
 

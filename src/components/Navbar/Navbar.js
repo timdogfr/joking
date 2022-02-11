@@ -12,7 +12,8 @@ import {
     NavItems,
     NavLink,
     StyledButton,
-    StyledButtonMobile  
+    StyledButtonMobile,  
+    NavIcon
 } from './Navbar.element'
 import {FaBars,FaTimes} from 'react-icons/fa';
 import { IconContext } from "react-icons/lib";
@@ -110,14 +111,49 @@ const Navbar = () => {
             </NavLink>
           <NavMenu onClick={handleClick} click={click}>
               <NavItems>
-                  <NavLink onClick={homeLink} spy={true} smooth={true} offset={-80} duration={500}>Home</NavLink> 
+                  <NavLink  spy={true} smooth={true} offset={-80} duration={500}>About</NavLink> 
                 </NavItems>
                 <NavItems>
-                  <NavLink onClick={openSea} spy={true} smooth={true} offset={-80} duration={500}>Opensea</NavLink> 
+                  <NavLink  spy={true} smooth={true} offset={-80} duration={500}>Presale</NavLink> 
                 </NavItems>
-        
-               
-                {/* <NavItems>
+                <NavItems>
+                  <NavLink spy={true} smooth={true} offset={-80} duration={500}>Charts</NavLink> 
+                </NavItems>
+                <NavItems>
+                  <NavLink  spy={true} smooth={true} offset={-80} duration={500}>Fund</NavLink> 
+                </NavItems>
+                <NavItems>
+                  <NavLink  spy={true} smooth={true} offset={-80} duration={500}>FAQ</NavLink> 
+                </NavItems>
+                <NavItems>
+                <StyledButton 
+                  onClick={(e) => {
+                          e.preventDefault();
+                          dispatch(connect());
+                          getData();
+                        }}
+                  >CONNECT</StyledButton>
+                </NavItems>
+                <NavItems style={{paddingLeft:"20px"}}>
+                  <NavLink>
+                    <NavIcon src={"config/images/instagram.png"}></NavIcon>
+                  </NavLink>
+                </NavItems>
+                <NavItems style={{paddingLeft:"0px"}}>
+                  <NavLink>
+                    <NavIcon src={"config/images/discord.png"}></NavIcon>
+                  </NavLink>
+                </NavItems>
+                <NavItems style={{paddingLeft:"0px"}}>
+                  <NavLink>
+                    <NavIcon src={"config/images/twitter.png"}></NavIcon>
+                  </NavLink>
+
+
+                </NavItems>
+
+                {/* Mobile Version */}
+                <NavItems>
                 <StyledButtonMobile 
                   onClick={(e) => {
                           e.preventDefault();
@@ -125,7 +161,9 @@ const Navbar = () => {
                           getData();
                         }}
                   >CONNECT</StyledButtonMobile>
-                </NavItems> */}
+                </NavItems> 
+
+                {/* End Mobile Version */}
                
               </NavMenu>
             
@@ -133,14 +171,7 @@ const Navbar = () => {
               {click ? <FaTimes/> : <FaBars/>}
               </MobileIcon>
 
-             
-                {/* <StyledButton 
-                  onClick={(e) => {
-                          e.preventDefault();
-                          dispatch(connect());
-                          getData();
-                        }}
-                  >CONNECT</StyledButton> */}
+               
               
              
           </NavContainer>
