@@ -40,9 +40,8 @@ export const VideoBg = styled.video`
 `;  
 
 export const ImageBg = styled.img`
-    width:100%;
+    width:${({wid}) => (wid ? wid+"%" : "100%")};
     height:100%;
-    opacity:0.5;
 `;  
 
 export const HeroContent = styled.div`
@@ -53,6 +52,7 @@ export const HeroContent = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
+    top:20%;
     
 `;
 
@@ -70,12 +70,12 @@ export const HeroH1 = styled.h1`
 `;
 
 export const HeroP = styled.p`
-    margin-top:24px;
-    font-size:1.2rem;
+    margin-top:14px;
+    font-size:1.8rem;
     color:#fff;
     text-align:center;
-    max-width:600px;
-    font-family: 'cocogoose';
+    font-family: 'wonder';
+    width:90%;
 
     @media screen and (max-width: 768px) {
         font-size:18px;
