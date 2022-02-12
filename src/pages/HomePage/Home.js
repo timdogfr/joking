@@ -3,17 +3,17 @@ import { ThemeProvider } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "../../redux/blockchain/blockchainActions";
 import { fetchData } from "./../../redux/data/dataActions";
-import {StyledButton}from '../../components/styles/button.styled';
-import {StyledRoundButton}from './../../components/styles/styledRoundButton.styled';
-import {StyledLink}from './../../components/styles/link.styled';
-import {ResponsiveWrapper}from './../../components/styles/responsivewrapper.styled';
+import { StyledButton } from "../../components/styles/button.styled";
+import { StyledRoundButton } from "./../../components/styles/styledRoundButton.styled";
+import { StyledLink } from "./../../components/styles/link.styled";
+import { ResponsiveWrapper } from "./../../components/styles/responsivewrapper.styled";
 import * as s from "./../../styles/globalStyles";
-import  ButtonIcon  from "../../components/ButtonIcon/buttonIcon";
+import ButtonIcon from "../../components/ButtonIcon/buttonIcon";
 import Benefits from "../../components/Benefits/benefits";
 import Roadmap from "../../components/Roadmap/Roadmap";
 import Navbar from "../../components/Navbar/Navbar";
-import {AiFillTwitterCircle} from "react-icons/ai";
-import {SiDiscord} from "react-icons/si";
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { SiDiscord } from "react-icons/si";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import Team from "../../components/Team/Team";
 const truncate = (input, len) =>
@@ -24,9 +24,11 @@ function Home() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click buy to mint your NFT. Max limit is One.`);
+  const [feedback, setFeedback] = useState(
+    `Click buy to mint your NFT. Max limit is One.`
+  );
   const [mintAmount, setMintAmount] = useState(1);
-  const [displayCost , setDisplayCost] = useState(0.075);
+  const [displayCost, setDisplayCost] = useState(0.075);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -83,7 +85,7 @@ function Home() {
       newMintAmount = 1;
     }
     setMintAmount(newMintAmount);
-    setDisplayCost(parseFloat(CONFIG.DISPLAY_COST*newMintAmount).toFixed(3));
+    setDisplayCost(parseFloat(CONFIG.DISPLAY_COST * newMintAmount).toFixed(3));
   };
 
   const incrementMintAmount = () => {
@@ -92,13 +94,13 @@ function Home() {
       newMintAmount = 15;
     }
     setMintAmount(newMintAmount);
-    setDisplayCost(parseFloat(CONFIG.DISPLAY_COST*newMintAmount).toFixed(3));
+    setDisplayCost(parseFloat(CONFIG.DISPLAY_COST * newMintAmount).toFixed(3));
   };
 
   const maxNfts = () => {
     setMintAmount(10);
-    setDisplayCost(parseFloat(CONFIG.DISPLAY_COST*10).toFixed(3));
-  }
+    setDisplayCost(parseFloat(CONFIG.DISPLAY_COST * 10).toFixed(3));
+  };
 
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
@@ -115,7 +117,6 @@ function Home() {
     });
     const config = await configResponse.json();
     SET_CONFIG(config);
-   
   };
 
   useEffect(() => {
@@ -126,124 +127,109 @@ function Home() {
     getData();
   }, [blockchain.account]);
 
-    return (
-        <>
-        
-        <Navbar/>
-        <HeroSection/>
+  return (
+    <>
+      <Navbar />
+      <HeroSection />
 
-        <s.FlexContainer
-           flex={1}
-            jc={"space-evenly"}
-            ai={"center"}
-            fd={"row"}
-            style={{
-              zIndex: "1",
-              marginTop: "-55vh",
-            }}
-        >
-        
+      <s.FlexContainer
+        flex={1}
+        jc={"space-evenly"}
+        ai={"center"}
+        fd={"row"}
+        style={{
+          zIndex: "1",
+          marginTop: "-55vh",
+        }}
+      >
         <s.Mint>
           <s.Image src={"config/images/mint_nft.png"} wid={70} />
           <s.TextSubTitle>3000 NFTS</s.TextSubTitle>
           <s.SpacerLarge />
-
-          <s.FlexContainer
-          fd={"row"}
-          ai={"center"}
-          jc={"space-between"}
-          >
-          <s.TextTitle>Balance</s.TextTitle>
-          <s.TextTitle>100</s.TextTitle>
+          <s.FlexContainer fd={"row"} ai={"center"} jc={"space-between"}>
+            <s.TextTitle>Balance</s.TextTitle>
+            <s.TextTitle>100</s.TextTitle>
           </s.FlexContainer>
-         
           <s.SpacerSmall />
           <s.Line />
           <s.SpacerLarge />
+          <s.FlexContainer fd={"row"} ai={"center"} jc={"space-between"}>
+            <s.TextTitle>Amount</s.TextTitle>
 
-          <s.FlexContainer
-          fd={"row"}
-          ai={"center"}
-          jc={"space-between"}
-          >
-          <s.TextTitle>Amount</s.TextTitle>
+            <s.Container ai={"center"} jc={"center"} fd={"row"}>
+              <StyledRoundButton
+                style={{ lineHeight: 0.4 }}
+                disabled={claimingNft ? 1 : 0}
+                onClick={(e) => {
+                  e.preventDefault();
+                  decrementMintAmount();
+                }}
+              >
+                -
+              </StyledRoundButton>
+              <s.SpacerMedium />
+              <s.TextDescription color={"#dbac36"} size={"2.5rem"}>
+                {mintAmount}
+              </s.TextDescription>
+              <s.SpacerMedium />
+              <StyledRoundButton
+                disabled={claimingNft ? 1 : 0}
+                onClick={(e) => {
+                  e.preventDefault();
+                  incrementMintAmount();
+                }}
+              >
+                +
+              </StyledRoundButton>
+            </s.Container>
 
-          <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      <StyledRoundButton
-                        style={{ lineHeight: 0.4 }}
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          decrementMintAmount();
-                        }}
-                      >
-                        -
-                      </StyledRoundButton>
-                      <s.SpacerMedium />
-                      <s.TextDescription color={"#dbac36"} size ={"2.5rem"}>
-                        {mintAmount}
-                      </s.TextDescription>
-                      <s.SpacerMedium />
-                      <StyledRoundButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          incrementMintAmount();
-                        }}
-                      >
-                        +
-                      </StyledRoundButton>
-                    </s.Container>
-          
-          <s.maxButton onClick={maxNfts}>Max</s.maxButton>
-         
+            <s.maxButton
+              onClick={(e) => {
+                e.preventDefault();
+                maxNfts();
+              }}
+            >
+              Max
+            </s.maxButton>
           </s.FlexContainer>
-          <s.TextSubTitle size={0.8} color={"#dbac36"} align={"right"}>Max 10</s.TextSubTitle>
+          <s.TextSubTitle size={0.8} color={"#dbac36"} align={"right"}>
+            Max 10
+          </s.TextSubTitle>
           <s.SpacerSmall />
           <s.Line />
-
           <s.SpacerLarge />
-          <s.FlexContainer
-          fd={"row"}
-          ai={"center"}
-          jc={"space-between"}
-          >
-          <s.TextTitle>Total</s.TextTitle>
-          <s.TextTitle color={"#dbac36"}>{displayCost}</s.TextTitle>
+          <s.FlexContainer fd={"row"} ai={"center"} jc={"space-between"}>
+            <s.TextTitle>Total</s.TextTitle>
+            <s.TextTitle color={"#dbac36"}>{displayCost}</s.TextTitle>
           </s.FlexContainer>
           <s.SpacerSmall />
           <s.Line />
           <s.SpacerSmall />
           <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      <s.connectButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          claimNFTs();
-                          getData();
-                        }}
-                      >
-                        {" "}
-                        {claimingNft ? "Confirm Transaction in Wallet" : "Mint"}{" "}
-                      </s.connectButton>{" "}
-                    </s.Container>{" "}
-         
+            <s.connectButton
+              disabled={claimingNft ? 1 : 0}
+              onClick={(e) => {
+                e.preventDefault();
+                claimNFTs();
+                getData();
+              }}
+            >
+              {" "}
+              {claimingNft ? "Confirm Transaction in Wallet" : "Mint"}{" "}
+            </s.connectButton>{" "}
+          </s.Container>{" "}
         </s.Mint>
 
         <s.CatDiv>
-        <s.Image src={"config/images/cat.png"} wid={50} />
-        <s.TextDescription>
-          Each JUngle Cats NFT is unique and includes a 3d model that can be used across the metaverse.
-        </s.TextDescription>
+          <s.Image src={"config/images/cat.png"} wid={50} />
+          <s.TextDescription>
+            Each JUngle Cats NFT is unique and includes a 3d model that can be
+            used across the metaverse.
+          </s.TextDescription>
         </s.CatDiv>
-
-        </s.FlexContainer>
-
-
-
-       
-        </>
-    )
+      </s.FlexContainer>
+    </>
+  );
 }
 
-export default Home
+export default Home;
