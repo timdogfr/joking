@@ -115,6 +115,11 @@ export const Mint = styled.div`
   border:1px solid #4b4b4b;
   border-radius:25px;
 
+  @media screen and (max-width: 768px) {
+    width:95%;
+    margin-top:-5vh;
+  }
+
 `;
 
 export const CatDiv = styled.div`
@@ -147,6 +152,8 @@ export const FlexContainer = styled.div`
   justify-content:${({ jc }) => (jc ? jc : "flex-start")};
   align-item :${({ ai }) => (ai ? ai : "flex-start")};
   flex-wrap:wrap;
+  margin-top : ${({ mt }) => (mt ? mt : "0")};
+
 
 `;
 

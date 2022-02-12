@@ -137,9 +137,9 @@ function Home() {
         jc={"space-evenly"}
         ai={"center"}
         fd={"row"}
+        mt={"-70vh"}
         style={{
           zIndex: "1",
-          marginTop: "-62vh",
         }}
       >
         <s.Mint>

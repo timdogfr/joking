@@ -38,7 +38,7 @@ export const NavContainer= styled.div`
 
 
 export const NavLogo = styled.img`
-  width: 80px;
+  width: 60px;
   cusror: pointer;
   display: flex;
   align-items: center;
