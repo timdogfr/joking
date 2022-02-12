@@ -143,7 +143,7 @@ function Home() {
           <s.SpacerLarge />
           <s.FlexContainer fd={"row"} ai={"center"} jc={"space-between"}>
             <s.TextTitle>Balance</s.TextTitle>
-            <s.TextTitle>100</s.TextTitle>
+            <s.TextTitle></s.TextTitle>
           </s.FlexContainer>
           <s.SpacerSmall />
           <s.Line />
