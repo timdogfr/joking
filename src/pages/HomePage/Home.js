@@ -139,7 +139,7 @@ function Home() {
         fd={"row"}
         style={{
           zIndex: "1",
-          marginTop: "-55vh",
+          marginTop: "-62vh",
         }}
       >
         <s.Mint>
@@ -223,7 +223,7 @@ function Home() {
         <s.CatDiv>
           <s.Image src={"config/images/cat.png"} wid={50} />
           <s.TextDescription>
-            Each JUngle Cats NFT is unique and includes a 3d model that can be
+            Each Jungle Cats NFT is unique and includes a 3d model that can be
             used across the metaverse.
           </s.TextDescription>
         </s.CatDiv>

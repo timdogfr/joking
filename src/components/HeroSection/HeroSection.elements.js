@@ -52,7 +52,7 @@ export const HeroContent = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
-    top:20%;
+    top:15%;
     
 `;
 
