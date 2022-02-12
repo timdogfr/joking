@@ -1,6 +1,6 @@
 # Joking Jungle Cats NFT's Mint Page
 
-## https://mint.mutantagecamelclub.io/
+![](https://raw.githubusercontent.com/waleed677/Joking-Jungle-Cats-Mint-Page/master/public/config/images/banner.jpeg)
 
 ## Installation
 
@@ -20,4 +20,3 @@
 
 # Contract Address
 
-https://etherscan.io/address/0xee77b16200014161d4abf857a37e7ac7e265c84d
