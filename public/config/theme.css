@@ -6,3 +6,10 @@
   --accent: #505050;
   --accent-text: #ffffff;
 }
+
+body{
+  background-image: url('./images/bg.png') !important; ;
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
+  background-position: center;
+}

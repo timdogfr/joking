@@ -3,7 +3,7 @@ import {MdKeyboardArrowRight, MdArrowForward} from "react-icons/md";
 import { Link } from "react-scroll";
 
 export const HeroContainer = styled.div`
-    background:#0c0c0c;
+    ${'' /* background:#0c0c0c; */}
     display:flex;
     justify-content:center;
     align-items:center;
@@ -12,10 +12,6 @@ export const HeroContainer = styled.div`
     position:relative;
     z-index:1;
     width: 100%;
-    background-image: url('config/images/bg.png') ;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center;
     @media screen and (max-width: 768px) {
         height:100vh;
     }

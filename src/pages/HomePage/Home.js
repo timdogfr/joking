@@ -8,14 +8,8 @@ import { StyledRoundButton } from "./../../components/styles/styledRoundButton.s
 import { StyledLink } from "./../../components/styles/link.styled";
 import { ResponsiveWrapper } from "./../../components/styles/responsivewrapper.styled";
 import * as s from "./../../styles/globalStyles";
-import ButtonIcon from "../../components/ButtonIcon/buttonIcon";
-import Benefits from "../../components/Benefits/benefits";
-import Roadmap from "../../components/Roadmap/Roadmap";
 import Navbar from "../../components/Navbar/Navbar";
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { SiDiscord } from "react-icons/si";
 import HeroSection from "../../components/HeroSection/HeroSection";
-import Team from "../../components/Team/Team";
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
@@ -129,6 +123,7 @@ function Home() {
 
   return (
     <>
+  <s.Body>
       <Navbar />
       <HeroSection />
 
@@ -233,15 +228,16 @@ function Home() {
           )}
         </s.Mint>
 
-        <s.CatDiv>
-          <s.Image src={"config/images/cat.png"} wid={50} />
+        <s.CatDiv >
+          <s.Image src={"config/images/cat.png"} wid={45} />
           <s.TextDescription>
-            Each Jungle Cats NFT is unique and includes a 3d model that can be
-            used across the metaverse.
+            Each Jungle Cats NFT is unique and includes lifetime, free acess to all joke comedy shows within all metaverse we will have a presence and a free apartment within infiniverse.
           </s.TextDescription>
         </s.CatDiv>
       </s.FlexContainer>
+      </s.Body>
     </>
+    
   );
 }
 

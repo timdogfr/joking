@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 // Used for wrapping a page component
 export const Body = styled.div`
-  background-color: ${({theme}) => theme.colors.body};
-  background-image: ${({ image }) => (image ? `url(${image})` : "none")};
+  background-image: url('config/images/bg.png') ;
   background-size: cover;
-  background-position: center;
+  background-position: 100% 100%;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -124,6 +123,12 @@ export const Mint = styled.div`
 
 export const CatDiv = styled.div`
   display:block;
+  width:45%;
+
+  @media screen and (max-width: 768px) {
+    width:100%;
+    margin-top:10px !important;
+  }
 
 `;
 
