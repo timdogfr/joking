@@ -129,7 +129,9 @@ const Navbar = () => {
                 <NavItems>
                   <NavLink  spy={true} smooth={true} offset={-80} duration={500}>FAQ</NavLink> 
                 </NavItems>
+                {blockchain.account === "" || blockchain.smartContract === null ? (
                 <NavItems>
+               
                 <StyledButton 
                   onClick={(e) => {
                           e.preventDefault();
@@ -138,6 +140,7 @@ const Navbar = () => {
                         }}
                   >CONNECT</StyledButton>
                 </NavItems>
+                ) : ""}
                 <NavItems style={{paddingLeft:"20px"}}>
                   <NavLink onClick={()=>socialMedia("https://instagram.com/joke.community")}>
                     <NavIcon src={"config/images/instagram.png"}></NavIcon>

@@ -90,8 +90,8 @@ function Home() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 15) {
-      newMintAmount = 15;
+    if (newMintAmount > 10) {
+      newMintAmount = 10;
     }
     setMintAmount(newMintAmount);
     setDisplayCost(parseFloat(CONFIG.DISPLAY_COST * newMintAmount).toFixed(3));
@@ -192,7 +192,7 @@ function Home() {
               Max
             </s.maxButton>
           </s.FlexContainer>
-          <s.TextSubTitle size={0.8} color={"#dbac36"} align={"right"}>
+          <s.TextSubTitle size={0.9} color={"#dbac36"} align={"right"}>
             Max 10
           </s.TextSubTitle>
           <s.SpacerSmall />
@@ -205,6 +205,8 @@ function Home() {
           <s.SpacerSmall />
           <s.Line />
           <s.SpacerSmall />
+
+          {blockchain.account !== "" && blockchain.smartContract !== null ? (
           <s.Container ai={"center"} jc={"center"} fd={"row"}>
             <s.connectButton
               disabled={claimingNft ? 1 : 0}
@@ -217,7 +219,18 @@ function Home() {
               {" "}
               {claimingNft ? "Confirm Transaction in Wallet" : "Mint"}{" "}
             </s.connectButton>{" "}
-          </s.Container>{" "}
+          </s.Container>
+          ) : (
+            <s.connectButton
+                      style={{
+                        textAlign: "center",
+                        color: "var(--accent-text)",
+                      }}
+                    >
+                      Connect to the {CONFIG.NETWORK.NAME}
+                      network{" "}
+                    </s.connectButton>
+          )}
         </s.Mint>
 
         <s.CatDiv>
