@@ -94,6 +94,10 @@ const Navbar = () => {
       scroll.scrollToTop();
     }
 
+    const socialMedia = (url) =>{
+      window.location.href = url;
+    }
+
     const homeLink = () =>{
       window.location.replace("https://mutantagecamelclub.io/")
     }
@@ -135,17 +139,17 @@ const Navbar = () => {
                   >CONNECT</StyledButton>
                 </NavItems>
                 <NavItems style={{paddingLeft:"20px"}}>
-                  <NavLink>
+                  <NavLink onClick={()=>socialMedia("https://instagram.com/joke.community")}>
                     <NavIcon src={"config/images/instagram.png"}></NavIcon>
                   </NavLink>
                 </NavItems>
                 <NavItems style={{paddingLeft:"0px"}}>
-                  <NavLink>
+                  <NavLink onClick={()=> socialMedia("https://discord.gg/jc")}>
                     <NavIcon src={"config/images/discord.png"}></NavIcon>
                   </NavLink>
                 </NavItems>
                 <NavItems style={{paddingLeft:"0px"}}>
-                  <NavLink>
+                  <NavLink onClick={()=>socialMedia("https://twitter.com/jokecommunity")}>
                     <NavIcon src={"config/images/twitter.png"}></NavIcon>
                   </NavLink>
 

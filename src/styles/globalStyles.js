@@ -48,30 +48,37 @@ export const Container = styled.div`
   align-items: ${({ ai }) => (ai ? ai : "flex-start")};
   width: ${({ wid }) => (wid ? wid+"%" : "100%")};
 
+
   @media screen and (max-width: 768px) {
-    ${'' /* margin-top: -2vh !important; */}
+    flex-wrap:wrap;
   }
   
 `;
 
 export const TextTitle = styled.p`
-  color: var(--primary-text);
-  font-size: 22px;
+  color: ${({color}) => color ? color : "#fff"};
+  font-size: 2.2rem;
   font-weight: 500;
   line-height: 1.6;
+  font-family: 'wonder';
 `;
 
 export const TextSubTitle = styled.p`
-  color: var(--primary-text);
-  font-size: 18px;
-  line-height: 1.6;
+  color: ${({color}) => color ? color : "#fff"};
+  font-size: 1.5rem;
+  font-family: 'wonder';
+  text-align:center;
 `;
 
 export const TextDescription = styled.p`
-  color: var(--primary-text);
-  font-size: 16px;
+  color: ${({color}) => color ? color : "#fff"};
+  font-size: ${({size}) => size ? size : "1.5rem"};
   line-height: 1.6;
   font-family: 'wonder';
+  text-align:center;
+  width:90%;
+  display:block;
+  margin:0 auto;
 
   @media screen and (min-width: 768px) {
     margin-top: 0 ;
@@ -103,19 +110,59 @@ column-gap:${({ gap }) => (gap ? gap+"%" : "20%")};
 `;
 
 export const Mint = styled.div`
-  border
+  padding:50px 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border:1px solid #4b4b4b;
+  border-radius:25px;
+
+`;
+
+export const CatDiv = styled.div`
+  display:block;
+
 `;
 
 export const Image = styled.img`
   width: ${({ wid }) => (wid ? wid+"%" : "100%")};
-  justify-self:flex-start;
   transition: width 0.5s;
   transition: height 0.5s;
-  padding-bottom:2vh;
   margin-top:20px;
+  display:block;
+  margin:0 auto;
   @media (max-width: 767px) {
     width: 100%;
     margin-top:0;
 
   }
 `;  
+
+export const Line = styled.hr`
+  width:100%;
+  border:1px solid #dbac36;
+`;
+
+export const FlexContainer = styled.div`
+  display:flex;
+  flex-direction:${({ fd }) => (fd ? fd : "column")};
+  justify-content:${({ jc }) => (jc ? jc : "flex-start")};
+  align-item :${({ ai }) => (ai ? ai : "flex-start")};
+  flex-wrap:wrap;
+`;
+
+export const connectButton = styled.button`
+  width:100%;
+  padding:10px;
+  background-color: transparent;
+  color: #dbac36;
+  font-family: 'wonder';
+  text-align:center;
+  font-size:1.5rem;
+  border:1px solid #dbac36;
+  border-radius:10px;
+`;
+
+export const maxButton = styled.button`
+  width:30%;
+  background : #dbac36;
+
+`;
