@@ -219,7 +219,7 @@ function Home() {
             <s.connectButton
                       style={{
                         textAlign: "center",
-                        color: "var(--accent-text)",
+                        color: "#dbac36",
                         cursor:"pointer",
                       }}
                       onClick={(e) => {
