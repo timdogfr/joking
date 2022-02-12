@@ -236,7 +236,7 @@ function Home() {
         <s.CatDiv  >
           <s.Image src={"config/images/cat.png"} wid={45} />
           <s.TextDescription>
-            Each Jungle Cats NFT is unique and includes lifetime, free acess to all joke comedy shows within all metaverse we will have a presence and a free apartment within infiniverse.
+            Each Jungle Cats NFT is unique and includes lifetime, free access to all joke comedy shows within all metaverse we will have a presence and a free apartment within infiniverse.
           </s.TextDescription>
         </s.CatDiv>
       </s.FlexContainer>
