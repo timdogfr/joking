@@ -83,7 +83,7 @@ function Home() {
       newMintAmount = 1;
     }
     setMintAmount(newMintAmount);
-    setDisplayCost(CONFIG.DISPLAY_COST*parseFloat(newMintAmount).toString());
+    setDisplayCost(parseFloat(CONFIG.DISPLAY_COST*newMintAmount).toFixed(3));
   };
 
   const incrementMintAmount = () => {
@@ -94,6 +94,11 @@ function Home() {
     setMintAmount(newMintAmount);
     setDisplayCost(parseFloat(CONFIG.DISPLAY_COST*newMintAmount).toFixed(3));
   };
+
+  const maxNfts = () => {
+    setMintAmount(10);
+    setDisplayCost(parseFloat(CONFIG.DISPLAY_COST*10).toFixed(3));
+  }
 
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
@@ -155,6 +160,7 @@ function Home() {
           <s.SpacerSmall />
           <s.Line />
           <s.SpacerLarge />
+
           <s.FlexContainer
           fd={"row"}
           ai={"center"}
@@ -189,8 +195,10 @@ function Home() {
                       </StyledRoundButton>
                     </s.Container>
           
-          <s.maxButton>Max</s.maxButton>
+          <s.maxButton onClick={maxNfts}>Max</s.maxButton>
+         
           </s.FlexContainer>
+          <s.TextSubTitle size={0.8} color={"#dbac36"} align={"right"}>Max 10</s.TextSubTitle>
           <s.SpacerSmall />
           <s.Line />
 

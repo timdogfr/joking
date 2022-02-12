@@ -65,9 +65,9 @@ export const TextTitle = styled.p`
 
 export const TextSubTitle = styled.p`
   color: ${({color}) => color ? color : "#fff"};
-  font-size: 1.5rem;
+  font-size: ${({size}) => size ? size+"rem" : "1.5rem"};
   font-family: 'wonder';
-  text-align:center;
+  text-align:${({align}) => align ? align : "center"};
 `;
 
 export const TextDescription = styled.p`
@@ -147,6 +147,7 @@ export const FlexContainer = styled.div`
   justify-content:${({ jc }) => (jc ? jc : "flex-start")};
   align-item :${({ ai }) => (ai ? ai : "flex-start")};
   flex-wrap:wrap;
+
 `;
 
 export const connectButton = styled.button`
@@ -164,5 +165,10 @@ export const connectButton = styled.button`
 export const maxButton = styled.button`
   width:30%;
   background : #dbac36;
+  height:50px;
+  border-radius:10px;
+  font-family: 'wonder';
+  font-size:1.5rem;
+
 
 `;
