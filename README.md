@@ -1,6 +1,6 @@
 # Joking Jungle Cats NFT's Mint Page
 
-![](https://github.com/HashLips/hashlips_nft_minting_dapp/blob/main/logo.png)
+![](https://raw.githubusercontent.com/waleed677/Joking-Jungle-Cats-Mint-Page/master/public/config/images/banner.jpeg)
 
 ## Installation
 
