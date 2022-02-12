@@ -18,6 +18,8 @@ function Home() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
+  const [mintDone, setMintDone] = useState(false);
+  const [supply , setTotalSupply] = useState(0);
   const [feedback, setFeedback] = useState(
     `Click buy to mint your NFT. Max limit is One.`
   );
@@ -44,7 +46,6 @@ function Home() {
 
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
-    let displayCost = CONFIG.DISPLAY_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
@@ -64,11 +65,15 @@ function Home() {
         setClaimingNft(false);
       })
       .then((receipt) => {
-        console.log(receipt);
+        setMintDone(true);
         setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          `Done, the ${CONFIG.NFT_NAME} is yours!`
         );
         setClaimingNft(false);
+        blockchain.smartContract.methods.totalSupply().call().then(res => {
+          setTotalSupply(res);
+        });
+        
         dispatch(fetchData(blockchain.account));
       });
   };
@@ -96,9 +101,11 @@ function Home() {
     setDisplayCost(parseFloat(CONFIG.DISPLAY_COST * 10).toFixed(3));
   };
 
-  const getData = () => {
+  const getData = async () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
       dispatch(fetchData(blockchain.account));
+      const totalSupply =  await blockchain.smartContract.methods.totalSupply().call();
+      setTotalSupply(totalSupply);
     }
   };
 
@@ -111,6 +118,7 @@ function Home() {
     });
     const config = await configResponse.json();
     SET_CONFIG(config);
+
   };
 
   useEffect(() => {
@@ -139,14 +147,8 @@ function Home() {
       >
         <s.Mint>
           <s.Image src={"config/images/mint_nft.png"} wid={70} />
-          <s.TextSubTitle>3000 NFTS</s.TextSubTitle>
+          <s.TextSubTitle size={1.1}>{3000-supply} of 3000 NFT's Available</s.TextSubTitle>
           <s.SpacerLarge />
-          <s.FlexContainer fd={"row"} ai={"center"} jc={"space-between"}>
-            <s.TextTitle>Balance</s.TextTitle>
-            <s.TextTitle></s.TextTitle>
-          </s.FlexContainer>
-          <s.SpacerSmall />
-          <s.Line />
           <s.SpacerLarge />
           <s.FlexContainer fd={"row"} ai={"center"} jc={"space-between"}>
             <s.TextTitle>Amount</s.TextTitle>
@@ -213,6 +215,7 @@ function Home() {
             >
               {" "}
               {claimingNft ? "Confirm Transaction in Wallet" : "Mint"}{" "}
+              {mintDone ? feedback : ""}{" "}
             </s.connectButton>{" "}
           </s.Container>
           ) : (
@@ -231,12 +234,25 @@ function Home() {
                       Connect to Wallet
                     </s.connectButton>
           )}
+
+          {blockchain.errorMsg !== "" ? (
+            <s.connectButton
+                      style={{
+                        textAlign: "center",
+                        color: "#dbac36",
+                        cursor:"pointer",
+                      }}
+                    >
+                       {feedback}
+                    </s.connectButton>
+          ) : ("")}
+
         </s.Mint>
 
         <s.CatDiv  >
           <s.Image src={"config/images/cat.png"} wid={45} />
           <s.TextDescription>
-            Each Jungle Cats NFT is unique and includes lifetime, free access to all joke comedy shows within all metaverse we will have a presence and a free apartment within infiniverse.
+          EACH JUNGLE CATS NFT IS UNIQUE AND INCLUDES FREE LIFETIME ACCESS TO ALL JOKE COMEDY SHOWS WITHIN MULTIPLE METAVERSES. HOLDERS EVEN GET A FREE APARTMENT WITHIN THE METAVERSE !
           </s.TextDescription>
         </s.CatDiv>
       </s.FlexContainer>

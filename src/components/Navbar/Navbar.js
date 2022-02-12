@@ -99,7 +99,7 @@ const Navbar = () => {
     }
 
     const homeLink = () =>{
-      window.location.replace("https://mutantagecamelclub.io/")
+      window.location.replace("https://jokecommunity.io/")
     }
 
     const openSea = () =>{
@@ -115,20 +115,9 @@ const Navbar = () => {
             </NavLink>
           <NavMenu onClick={handleClick} click={click}>
               <NavItems>
-                  <NavLink  spy={true} smooth={true} offset={-80} duration={500}>About</NavLink> 
+                  <NavLink onClick={homeLink}  spy={true} smooth={true} offset={-80} duration={500}>Home</NavLink> 
                 </NavItems>
-                <NavItems>
-                  <NavLink  spy={true} smooth={true} offset={-80} duration={500}>Presale</NavLink> 
-                </NavItems>
-                <NavItems>
-                  <NavLink spy={true} smooth={true} offset={-80} duration={500}>Charts</NavLink> 
-                </NavItems>
-                <NavItems>
-                  <NavLink  spy={true} smooth={true} offset={-80} duration={500}>Fund</NavLink> 
-                </NavItems>
-                <NavItems>
-                  <NavLink  spy={true} smooth={true} offset={-80} duration={500}>FAQ</NavLink> 
-                </NavItems>
+              
                 {/* {blockchain.account === "" || blockchain.smartContract === null ? (
                 <NavItems>
                
