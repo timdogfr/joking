@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
    height: 100%;
   width: 100%;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
   background-color: rgb(0,0,0);
@@ -48,6 +47,7 @@ export const Count = styled.div`
 export const Digit = styled.div`
   font-size: 11vw;
   -webkit-text-stroke: 2px #d2ae34;
+  text-stroke: 2px #d2ae34;
   color: #000;
 `;
 

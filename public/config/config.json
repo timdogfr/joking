@@ -1,10 +1,10 @@
 {
-  "CONTRACT_ADDRESS": "0x95d9282f7D48E926b1Df2E8e1406F3B8496fb7F0",
-  "SCAN_LINK": "https://etherscan.io/address/0xee77b16200014161d4abf857a37e7ac7e265c84d",
+  "CONTRACT_ADDRESS": "0x35043d11D31346D005b848E3cd7998707FF7EE27",
+  "SCAN_LINK": "https://etherscan.io/address/0x35043d11D31346D005b848E3cd7998707FF7EE27",
   "NETWORK": {
-    "NAME": "Rinkeby",
+    "NAME": "Ethereum",
     "SYMBOL": "ETH",
-    "ID": 4
+    "ID": 1
   },
   "NFT_NAME": "Jungle Cats",
   "SYMBOL": "JC",
