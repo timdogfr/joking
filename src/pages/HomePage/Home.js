@@ -21,9 +21,7 @@ function Home() {
   const [claimingNft, setClaimingNft] = useState(false);
   const [mintDone, setMintDone] = useState(false);
   const [supply , setTotalSupply] = useState(0);
-  const [feedback, setFeedback] = useState(
-    `Click buy to mint your NFT. Max limit is One.`
-  );
+  const [feedback, setFeedback] = useState("");
   const [mintAmount, setMintAmount] = useState(1);
   const [displayCost, setDisplayCost] = useState(0.075);
   const [CONFIG, SET_CONFIG] = useState({
@@ -142,6 +140,7 @@ function Home() {
   const [seconds, setSec] = useState();
 
   useEffect(() => {
+    alert(countDownDate);
       const interval = setInterval(() => {
         setDays(Math.floor(timeleft / (1000 * 60 * 60 * 24)));
         setHour(
