@@ -140,7 +140,6 @@ function Home() {
   const [seconds, setSec] = useState();
 
   useEffect(() => {
-    alert(countDownDate);
       const interval = setInterval(() => {
         setDays(Math.floor(timeleft / (1000 * 60 * 60 * 24)));
         setHour(
