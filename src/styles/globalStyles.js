@@ -54,6 +54,18 @@ export const Container = styled.div`
   
 `;
 
+export const AmountContainer = styled.div`
+  display: flex;
+  flex: ${({ flex }) => (flex ? flex : 0)};
+  flex-direction: ${({ fd }) => (fd ? fd : "column")};
+  justify-content: ${({ jc }) => (jc ? jc : "flex-start")};
+  align-items: ${({ ai }) => (ai ? ai : "flex-start")};
+  width: ${({ wid }) => (wid ? wid+"%" : "100%")};
+
+
+  
+`;
+
 export const TextTitle = styled.p`
   color: ${({color}) => color ? color : "#fff"};
   font-size: 2.2rem;
@@ -181,6 +193,13 @@ export const maxButton = styled.button`
   border-radius:10px;
   font-family: 'wonder';
   font-size:1.5rem;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    margin-left: auto;
+    margin-bottom: 10px;
+   
+  }
 
 
 `;

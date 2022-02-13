@@ -179,10 +179,11 @@ function Home() {
           <s.TextSubTitle size={1.4}>{3000-supply} of 3000 NFT's Available</s.TextSubTitle>
           <s.SpacerLarge />
           <s.SpacerLarge />
+
           <s.FlexContainer fd={"row"} ai={"center"} jc={"space-between"}>
             <s.TextTitle>Amount</s.TextTitle>
 
-            <s.Container ai={"center"} jc={"center"} fd={"row"}>
+            <s.AmountContainer ai={"center"} jc={"center"} fd={"row"}>
               <StyledRoundButton
                 style={{ lineHeight: 0.4 }}
                 disabled={claimingNft ? 1 : 0}
@@ -207,7 +208,7 @@ function Home() {
               >
                 +
               </StyledRoundButton>
-            </s.Container>
+            </s.AmountContainer>
 
             <s.maxButton
             style={{cursor:"pointer"}}
