@@ -118,7 +118,7 @@ const Navbar = () => {
                   <NavLink onClick={homeLink}  spy={true} smooth={true} offset={-80} duration={500}>Home</NavLink> 
                 </NavItems>
               
-                {/* {blockchain.account === "" || blockchain.smartContract === null ? (
+                {blockchain.account === "" || blockchain.smartContract === null ? (
                 <NavItems>
                
                 <StyledButton 
@@ -129,7 +129,7 @@ const Navbar = () => {
                         }}
                   >CONNECT</StyledButton>
                 </NavItems>
-                ) : ""} */}
+                ) : ""}
                 <NavItems style={{paddingLeft:"20px"}}>
                   <NavLink onClick={()=>socialMedia("https://instagram.com/joke.community")}>
                     <NavIcon src={"config/images/instagram.png"}></NavIcon>
@@ -149,7 +149,7 @@ const Navbar = () => {
                 </NavItems>
 
                 {/* Mobile Version */}
-                {/* <NavItems>
+                <NavItems>
                 <StyledButtonMobile 
                   onClick={(e) => {
                           e.preventDefault();
@@ -157,7 +157,7 @@ const Navbar = () => {
                           getData();
                         }}
                   >CONNECT</StyledButtonMobile>
-                </NavItems>  */}
+                </NavItems> 
 
                 {/* End Mobile Version */}
                
