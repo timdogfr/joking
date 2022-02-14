@@ -2,6 +2,12 @@
 
 ![](https://raw.githubusercontent.com/waleed677/Joking-Jungle-Cats-Mint-Page/master/public/config/images/banner.jpeg)
 
+## Website Link
+
+https://mint.jokecommunity.io/
+https://jokecommunity.io/
+
+
 ## Installation
 
 1. Clone the Repository
@@ -19,6 +25,8 @@
 
 
 # Contract Address
+
+https://etherscan.io/address/0x35043d11D31346D005b848E3cd7998707FF7EE27#code
 
 
 You can hire me for blockchain work on
