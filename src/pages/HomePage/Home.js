@@ -174,7 +174,7 @@ function Home() {
       >
         <s.Mint>
           <s.Image src={"config/images/mint_nft.png"} wid={70} />
-          <s.TextSubTitle size={1.4}>{3000-supply} of 3000 NFT's Available</s.TextSubTitle>
+          <s.TextSubTitle size={1.4}>{10000-supply} of 10000 NFT's Available</s.TextSubTitle>
           <s.SpacerLarge />
           <s.SpacerLarge />
 
